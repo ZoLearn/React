@@ -1,0 +1,56 @@
+@import '../scss/variables';
+
+.status {
+  height: 100vh;
+  background: $orange;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .order {
+    margin: 2rem 0;
+  }
+
+  .eta {
+    margin: 2rem;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-size: 22px;
+    line-height: 120%;
+
+    &__minutes {
+      font-weight: 700; 
+    }
+  }
+
+  .btn {
+    display: flex;
+    max-width: 14rem;
+    width: 100%;
+    font-family: 'PT Serif', serif;
+    font-size: 1.4rem;
+    text-decoration: none;
+    height: 4rem;
+    margin: 1rem 0;
+    justify-content: center;
+    align-items: center;
+    color: #222;
+    border-radius: 999rem;
+    background: rgba($color: #FFFFFF, $alpha: .8);
+    border: rgba($color: #FFFFFF, $alpha: .8);
+
+    &:active {
+      background: white;
+    }
+  }
+}

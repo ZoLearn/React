@@ -1,0 +1,67 @@
+@import './scss/_variables.scss';
+@import url('https://fonts.googleapis.com/css?family=PT+Serif:700|Work+Sans:400,600&display=swap');
+
+h1, h2, h3 {
+    font-family: 'PT Serif', serif;
+}
+
+h1 {
+    font-size: 2.4rem;
+    margin: 1rem 0;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+p {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 160%;
+
+    &.ingress {
+        font-weight: 600;
+        font-size: 1.1rem;
+        line-height: 140%;
+        margin: 0;
+    }
+}
+
+body {
+    margin: 0;
+    font-family: 'Work Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: $pink;
+
+    .App {
+        .home, .menu, .about {
+            padding: 6rem 1.4rem;
+            box-sizing: border-box;
+            background-image: url('./assets/graphics/graphics-header.svg'), url('./assets/graphics/graphics-footer.svg');
+            background-position: top center, bottom center;
+            background-repeat: no-repeat, no-repeat;
+            background-size: 100%, 100%;
+
+            &.menu {
+                max-width: 480px;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+/* ANIMATIONS */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}

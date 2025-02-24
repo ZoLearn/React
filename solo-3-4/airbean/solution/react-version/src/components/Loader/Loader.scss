@@ -1,0 +1,32 @@
+@import '../../scss/variables';
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem 0;
+
+  img {
+    width: 4rem;
+    animation: none;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  img {
+    margin: 2rem 0;
+    animation: hover 4s linear infinite;
+  }
+
+  @keyframes hover {
+      0% { transform: translateY(0) rotateZ(0deg); }
+     25% { transform: translateY(.25rem) rotateZ(1deg); }
+     50% { transform: translateY(.5rem) rotateZ(0deg); }
+     75% { transform: translateY(.25rem) rotateZ(-1deg); }
+    100% { transform: translateY(0) rotateZ(0deg); }
+  }
+}

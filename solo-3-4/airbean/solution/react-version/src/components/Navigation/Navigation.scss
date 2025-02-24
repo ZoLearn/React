@@ -1,0 +1,29 @@
+@import '../../scss/variables';
+
+.main-nav {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba($color: $darkbrown, $alpha: .98);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        color: white;
+        text-decoration: none;
+        font-family: 'PT Serif', serif;
+        font-size: 2rem;
+        margin: 2rem 0;
+    }
+
+    .spacer {
+        height: 1px;
+        width: 2rem;
+        background: rgba($color: #ffffff, $alpha: .2);
+    }
+}

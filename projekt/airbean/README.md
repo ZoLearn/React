@@ -33,19 +33,3 @@ fetch("https://airbean-api-xjlcn.ondigitalocean.app/api/beans/order", {
   },
 });
 ```
-
-## Instruktioner
-
-**Handledning**
-
-**För att få Godkänt ska du:**
-
-- Gjort enligt Figma skissen (viss variation på färger, typsnitt etc är tillåtet).
-- Använder sig av Redux med en Redux store.
-- Gjort alla user stories
-
-**För att Väl Godkänt ska du:**
-
-- Allt i godkänt.
-- Kunna ta bort produkter ur varukorgen.
-- Eftersom företaget vill fira lanseringen av Airbean så lanserar man med ett kampanjerbjudande! Om du köper en bryggkaffe och en Gustav Adolfsbakelse får du den för ett kampanjpris av 40 kr (49 kr billigare totalt). Det är alltså enbart med denna kombination som kampanjerbjudandet gäller.

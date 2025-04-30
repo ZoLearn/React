@@ -22,7 +22,7 @@ jobs:
           node-version: "20"
 
       - name: Install dependencies
-        run: npm install --global marked
+        run: npm ci
 
       - name: Generate HTML from README files
         run: node build-site.js

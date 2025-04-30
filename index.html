@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZoLearn</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>ZoLearn</h1>
+    <p>Samling av uppgifter och projekt i React</p>
+    <form class="search-form">
+      <input type="search" id="search" placeholder="Sök i README-filer..." />
+    </form>
+  </header>
+
+  <main class="grid">
+
+    <section class="card">
+      <h2>övningar/shopping-cart-state</h2>
+      <p class="readme"><h1>Instruktioner</h1>
+<p>Fortsätt på din shopping cart från ``shopping-cart-dataflow` - övningen och lägg till funktionalitet så att när en användare
+klickar på <strong>Add to cart</strong> ska produkten läggas till och cart-ikonen uppdateras med 1.</p>
+<p>Här behöver du använd React-hooken <code>useState</code> som håller ditt state med antal produkter.</p>
+<h2>Level up</h2>
+<ul>
+<li>Utöka cart-componenten så att den förutom visar antal produkter i varukorgen även visar vilka som är tillagda.</li>
+<li>Lägg till funktionalitet så det enbart går att lägga en produkt en gång.</li>
+</ul>
+<h2>Skiss</h2>
+<p><img src="https://user-images.githubusercontent.com/54267140/98822777-8b0fd480-2431-11eb-9429-5711c7a05413.png" alt="Screenshot"></p>
+</p>
+      <a href="https://github.com/ZoLearn/React/blob/main/övningar/shopping-cart-state/README.md" target="_blank">Visa på GitHub</a>
+    </section>
+  
+    <section class="card">
+      <h2>övningar/shopping-cart -dataflow</h2>
+      <p class="readme"><h1>Övning</h1>
+<p>I denna övning ska du göra en React-applikationen enligt designen som du kan på bilden nedanför (du kan skippa bilden på Sherlock). Denna sida kommer i denna övning vara statisk d.v.s. du kan hårdkoda all information och knapparna etc behöver inte göra något. Vi kommer återvända till denna övning och fixa det senare. Gällande bilden i övre vänstra hörnet kan ni välja valfri bild till.</p>
+<p>Följande komponenter bör finnas med:</p>
+<ul>
+<li>App</li>
+<li>Header</li>
+<li>Cart (som ligger i Header)</li>
+<li>Product</li>
+</ul>
+<p>Komponenten <strong>Product</strong> ska ta följande som props:</p>
+<ul>
+<li>Boktitel</li>
+<li>Författare</li>
+<li>Kort text om boken (kan vara Lorem Ipsum)</li>
+</ul>
+<h2>Skiss</h2>
+<p><img src="https://user-images.githubusercontent.com/54267140/108186450-aca5e980-710d-11eb-95cf-2a3e79ed3bcd.png" alt="Screenshot"></p>
+</p>
+      <a href="https://github.com/ZoLearn/React/blob/main/övningar/shopping-cart -dataflow/README.md" target="_blank">Visa på GitHub</a>
+    </section>
+  
+    <section class="card">
+      <h2>övningar/pixel-editor</h2>
+      <p class="readme"><h1>Pixel Editor</h1>
+<p>I denna övning ska du skapa en pixel editor enligt GIF:en nedan.</p>
+<p><img src="./assets/pixel-exercise.gif" alt="alt">;</p>
+<h2>Komponenter</h2>
+<p>Följande komponenter ska finnas med:</p>
+<ul>
+<li><code>App</code> - Huvudkomponenten</li>
+<li><code>Editor</code> - Själva editorn som innehåller resterande komponenter nedan</li>
+<li><code>DrawingPanel</code> - Komponenten som ritar ut alla rader</li>
+<li><code>Row</code> - En rad som innehåller ett antal pixlar</li>
+<li><code>Pixel</code> - En pixel</li>
+</ul>
+<h2>NPM-paket</h2>
+<p>Till denna övning behövs en &quot;color picker&quot; som du kan se i GIF:en ovan. Nedan hittar du länkar till
+antingen en &quot;color picker&quot; för React eller Vue.</p>
+<p>React: <a href="https://www.npmjs.com/package/react-color">react-color</a></p>
+<p>Vue: <a href="https://www.npmjs.com/package/vue-color">vue-color</a></p>
+</p>
+      <a href="https://github.com/ZoLearn/React/blob/main/övningar/pixel-editor/README.md" target="_blank">Visa på GitHub</a>
+    </section>
+  
+    <section class="card">
+      <h2>övningar/glass-bridge</h2>
+      <p class="readme"><h1>Övning: Bygg ett Glass Bridge Game i React</h1>
+<h2>Bakgrund:</h2>
+<p>I den populära serien <em>Squid Game</em> finns en utmaning där deltagarna måste korsa en glasbro, där varje platta antingen är säker eller farlig. Om de går på en farlig platta, faller de igenom. Detta spel är både en test av mod och strategi. I denna övning kommer du att bygga ett interaktivt <strong>Glass Bridge Game</strong> i React, där spelaren måste navigera genom en rad av farliga och säkra plattor.</p>
+<h2>Mål:</h2>
+<p>Målet med övningen är att skapa ett funktionellt spel med React som simulerar den klassiska &quot;Glass Bridge&quot;-utmaningen från <em>Squid Game</em>. Du kommer att använda <strong>React</strong> för att bygga spelets logik.</p>
+<h2>Kravspecifikation:</h2>
+<ol>
+<li>Spelet består av 10 rader där varje rad har två plattor:<ul>
+<li>En platta är säker (<code>&#39;safe&#39;</code>).</li>
+<li>En platta är farlig (<code>&#39;danger&#39;</code>).</li>
+</ul>
+</li>
+<li>Spelaren kan endast gå framåt, en rad i taget.</li>
+<li>Alla plattor ska slumpas men det ska alltid finnas en möjlig väg genom bron över till andra sida.</li>
+<li>Om spelaren väljer en farlig platta, får de börja om från början.</li>
+<li>Målet är att korsa bron med så få försök som möjligt och på kortast tid.</li>
+<li>När spelaren når den sista raden ska ett &quot;You Win!&quot;-meddelande visas. Spelet ska också visa statistik om hur många försök och vilken tid det tog att korsa bron.</li>
+</ol>
+<h2>Resultat:</h2>
+<ul>
+<li>Ett funktionellt spel där spelaren navigerar genom rader med farliga och säkra plattor.</li>
+<li>Om spelaren klickar på en farlig platta, måste de börja om från början på samma rad.</li>
+<li>Spelet ska visa en vinnande skärm när spelaren når den sista raden, samt statistik om antal försök och tid.</li>
+<li>Möjlighet för spelaren att spela om för att förbättra sina resultat (färre försök och kortare tid).</li>
+</ul>
+</p>
+      <a href="https://github.com/ZoLearn/React/blob/main/övningar/glass-bridge/README.md" target="_blank">Visa på GitHub</a>
+    </section>
+  
+    <section class="card">
+      <h2>övningar/booking-form</h2>
+      <p class="readme"><h1>Övning Booking form</h1>
+<p>Bygg din React-app enligt nedanstående skiss (hur mycket CSS du vill göra är upp till dig).</p>
+<p><strong>Steg 1</strong></p>
+<p>Koppla ihop varje datapunkt ( klass, titel, förnamn, efternamn, godkänner ) med en funktion i din React-komponent som lyssnar efter inmatning och sparar det som skrivs in i ett inputfält i en variabel.</p>
+<p><strong>Steg 2</strong></p>
+<p>Lyssna efter ett klickevent på knappen. Den ska då console.logga ett objekt med all bokning-data i.</p>
+<p>Figmaskiss: <a href="https://www.figma.com/file/XenjCcyq3pZUOa9MF3urqQ/Vue.js-form-exercise---Book-a-flight?node-id=0%3A1">https://www.figma.com/file/XenjCcyq3pZUOa9MF3urqQ/Vue.js-form-exercise---Book-a-flight?node-id=0%3A1</a></p>
+</p>
+      <a href="https://github.com/ZoLearn/React/blob/main/övningar/booking-form/README.md" target="_blank">Visa på GitHub</a>
+    </section>
+  
+    <section class="card">
+      <h2>projekt/airbean</h2>
+      <p class="readme"><h1>Airbean</h1>
+<p>Ni ska bygga en webbapp där det går att beställa kaffe och få den levererad via drönare (drönare ingår ej i uppgiften).</p>
+<h2>Arbetsgång</h2>
+<p>Ni ska arbeta enligt Scrum med dagliga standups (kan vara på morgonen, vid lunch eller eftermiddagen). Börja med att dela upp vilka stories ni ska göra denna vecka som bildar er sprint backlog. På onsdagar samt nästa måndag finns det möjlighet till handledning. På fredagar är det sprint review inför helklass där ni visar hur långt ni kommit och vilka stories ni gjort.</p>
+<p>Böra med att en i gruppen skapar ett Reactprojekt och pushar upp detta och resterande i gruppen klonar ner repot och sen kör en <code>npm install</code>. Diskutera hur ni ska lägga upp strukturen, kodkonventioner, namnstandarder och om ni ska köra Typescript och/eller SASS (inget krav på dessa).</p>
+<p>Arbeta med brancher i Git och gärna med pull requests, se följande inspelning från den agila kursen ifall ni vill ha en repetition på detta: <a href="https://vimeo.com/786252787/322f29aa9b">https://vimeo.com/786252787/322f29aa9b</a>.</p>
+<h2>User stories</h2>
+<p>En gruppmedlem gör ett repo och bjuder in resterande gruppmedlemmar till det repot. Sedan under fliken <strong>Projects</strong> så välj ett nytt projekt och sätt upp enligt strukturen nedan samt kopiera över alla user stories. Ni får även använda Trello och skapa upp fler stories eller tasks (som kan vara mer tekniska).</p>
+<p><a href="https://github.com/users/zocom-christoffer-wallenberg/projects/11/views/1">https://github.com/users/zocom-christoffer-wallenberg/projects/11/views/1</a></p>
+<h2>Figmaskiss</h2>
+<p><a href="https://www.figma.com/file/ONcO3UQRPBLQsZc3FkysMt/AirBean-v.1.1---with-profile?node-id=0%3A1&t=aOiJ6vMVkTI7Xxth-0">https://www.figma.com/file/ONcO3UQRPBLQsZc3FkysMt/AirBean-v.1.1---with-profile?node-id=0%3A1&amp;t=aOiJ6vMVkTI7Xxth-0</a></p>
+<h2>API-dokumentation</h2>
+<p><a href="https://airbean-api-xjlcn.ondigitalocean.app/api/docs/">https://airbean-api-xjlcn.ondigitalocean.app/api/docs/</a></p>
+<p>För att skicka med en token (som fås vid inloggning) i ett fetch-anrop.</p>
+<pre><code class="language-javascript">fetch(&quot;https://airbean-api-xjlcn.ondigitalocean.app/api/beans/order&quot;, {
+  headers: {
+    authorization: &quot;Bearer {token}&quot;,
+  },
+});
+</code></pre>
+</p>
+      <a href="https://github.com/ZoLearn/React/blob/main/projekt/airbean/README.md" target="_blank">Visa på GitHub</a>
+    </section>
+  
+  </main>
+
+  <script>
+    const searchElem = document.querySelector('#search');
+
+    searchElem.addEventListener('keyup', () => {
+        const query = searchElem.value.toLowerCase();
+        const items = document.querySelectorAll('ul li');
+        items.forEach(item => {
+            item.style.display = item.textContent.toLowerCase().includes(query) ? '' : 'none';
+        });
+    })
+  </script>
+</body>
+</html>

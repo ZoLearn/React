@@ -31,7 +31,7 @@ header h1 {
   -webkit-text-fill-color: transparent;
 }
 
-h2 {
+.category {
   background: var(--accent);
   background-clip: text;
   -webkit-background-clip: text;
@@ -83,7 +83,7 @@ main.grid {
   background-color: var(--hover);
 }
 
-.card h2 {
+.card .title {
   background: var(--accent);
   background-clip: text;
   -webkit-background-clip: text;

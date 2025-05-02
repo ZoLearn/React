@@ -25,7 +25,7 @@ let html = `
   </header>
 
   <main class="grid">
-    <h2>Övningar</h2>
+    <h2 class="category">Övningar</h2>
 `;
 
 const files = glob.sync("**/README.md", {
@@ -43,7 +43,7 @@ function categorizeREADME(category) {
 
       return `
           <section class="card">
-            <h2>${dir}</h2>
+            <h2 class="title">${dir}</h2>
             <div>${htmlContent}</div>
             <a href="${url}" target="_blank">Visa på GitHub</a>
           </section>
@@ -55,7 +55,7 @@ function categorizeREADME(category) {
 html += categorizeREADME("övningar");
 
 html += `
-    <h2>Projekt</h2>
+    <h2 class="category">Projekt</h2>
 `;
 html += categorizeREADME("projekt");
 

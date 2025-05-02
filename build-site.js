@@ -1,12 +1,10 @@
 const fs = require("fs");
 const path = require("path");
-const { execSync } = require("child_process");
-
 const marked = require("marked");
 const glob = require("glob");
 
 const outputDir = path.join(__dirname, "dist");
-//if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir);
+if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir);
 
 let html = `
 <!DOCTYPE html>
@@ -27,26 +25,39 @@ let html = `
   </header>
 
   <main class="grid">
+    <h2>Övningar</h2>
 `;
 
 const files = glob.sync("**/README.md", {
   ignore: ["**/node_modules/**", "**dist/**", "**/solution/**", "README.md"],
 });
 
-for (const file of files) {
-  const content = fs.readFileSync(file, "utf-8");
-  const htmlContent = marked.parse(content);
-  const url = `https://github.com/ZoLearn/React/blob/main/${file}`;
-  const dir = path.dirname(file);
+function categorizeREADME(category) {
+  return files
+    .filter((file) => file.startsWith(category))
+    .map((file) => {
+      const content = fs.readFileSync(file, "utf-8");
+      const htmlContent = marked.parse(content);
+      const url = `https://github.com/ZoLearn/React/blob/main/${file}`;
+      const dir = path.dirname(file);
 
-  html += `
-    <section class="card">
-      <h2>${dir}</h2>
-      <p class="readme">${htmlContent}</p>
-      <a href="${url}" target="_blank">Visa på GitHub</a>
-    </section>
-  `;
+      return `
+          <section class="card">
+            <h2>${dir}</h2>
+            <div>${htmlContent}</div>
+            <a href="${url}" target="_blank">Visa på GitHub</a>
+          </section>
+        `;
+    })
+    .join("\n");
 }
+
+html += categorizeREADME("övningar");
+
+html += `
+    <h2>Projekt</h2>
+`;
+html += categorizeREADME("projekt");
 
 html += `
   </main>
@@ -56,9 +67,9 @@ html += `
 
     searchElem.addEventListener('keyup', () => {
         const query = searchElem.value.toLowerCase();
-        const items = document.querySelectorAll('ul li');
-        items.forEach(item => {
-            item.style.display = item.textContent.toLowerCase().includes(query) ? '' : 'none';
+        const sections = document.querySelectorAll('section.card');
+        sections.forEach(section => {
+            section.style.display = section.textContent.toLowerCase().includes(query) ? '' : 'none';
         });
     })
   </script>

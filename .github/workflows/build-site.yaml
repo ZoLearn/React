@@ -29,12 +29,16 @@ jobs:
       - name: Generate HTML from README files
         run: node build-site.js
 
-      - name: Setup pages
-        uses: actions/configure-pages@v3
-      - name: Upload dist folder
-        uses: actions/upload-pages-artifact@v1
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          path: "./dist"
-      - name: Deploy to Github Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+          folder: dist
+      # - name: Setup pages
+      #   uses: actions/configure-pages@v3
+      # - name: Upload dist folder
+      #   uses: actions/upload-pages-artifact@v1
+      #   with:
+      #     path: "./dist"
+      # - name: Deploy to Github Pages
+      #   id: deployment
+      #   uses: actions/deploy-pages@v1

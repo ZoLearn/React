@@ -8,6 +8,13 @@ on:
 permissions:
   contents: write
 
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_NAME }}
+  AWS_REGION: "eu-north-1"
+  SOURCE_DIR: "dist"
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -27,16 +34,7 @@ jobs:
       - name: Generate HTML from README files
         run: node build-site.js
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Deploying to Cloudfront
+        uses: jakejarvis/s3-sync-action@master
         with:
-          folder: dist
-      # - name: Setup pages
-      #   uses: actions/configure-pages@v3
-      # - name: Upload dist folder
-      #   uses: actions/upload-pages-artifact@v1
-      #   with:
-      #     path: "./dist"
-      # - name: Deploy to Github Pages
-      #   id: deployment
-      #   uses: actions/deploy-pages@v1
+          args: --follow-symlinks --delete
